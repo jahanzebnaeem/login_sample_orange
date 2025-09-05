@@ -129,7 +129,12 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 80),
+                      SizedBox(height: 50),
+                      Text(
+                        "Continue with social media",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      SizedBox(height: 30),
                       Row(
                         children: <Widget>[
                           Expanded(
@@ -139,14 +144,33 @@ class HomePage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(50),
                                 color: Colors.blue,
                               ),
+                              child: Center(
+                                child: Text(
+                                  "Facebook",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
+                          SizedBox(width: 30),
                           Expanded(
                             child: Container(
                               height: 50,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
                                 color: Colors.black,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "Github",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                               ),
                             ),
                           ),
