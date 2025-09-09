@@ -9,19 +9,28 @@ class FadeAnimation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PlayAnimationBuilder<double>(
+    final movie = MovieTween()
+      ..scene(
+            begin: const Duration(milliseconds: 0),
+            duration: const Duration(milliseconds: 500),
+          )
+          .tween('opacity', Tween<double>(begin: 0.0, end: 1.0))
+          .tween('translateY', Tween<double>(begin: -30.0, end: 0.0));
+
+    return CustomAnimationBuilder(
       delay: Duration(milliseconds: (500 * delay).round()),
       duration: const Duration(milliseconds: 500),
-      tween: Tween(begin: 0.0, end: 1.0),
+      tween: movie,
       builder: (context, value, child) {
         return Opacity(
-          opacity: value,
+          opacity: value.get('opacity'),
           child: Transform.translate(
-            offset: Offset(0, -30 * (1 - value)),
+            offset: Offset(0, value.get('translateY')),
             child: child,
           ),
         );
       },
+      curve: Curves.easeOut,
       child: child,
     );
   }

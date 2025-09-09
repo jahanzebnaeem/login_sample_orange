@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_sample_orange/animation/fadeanimation.dart';
 
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: HomePage()));
@@ -31,14 +32,20 @@ class HomePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    'Login',
-                    style: TextStyle(color: Colors.white, fontSize: 40),
+                  FadeAnimation(
+                    delay: 1,
+                    child: Text(
+                      'Login',
+                      style: TextStyle(color: Colors.white, fontSize: 40),
+                    ),
                   ),
                   SizedBox(height: 10),
-                  Text(
-                    'Welcome back',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  FadeAnimation(
+                    delay: 1.3,
+                    child: Text(
+                      'Welcome back',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
                   ),
                 ],
               ),
